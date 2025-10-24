@@ -30,6 +30,11 @@ app.get('/', (req, res) => {
   res.send('Namaste! Mera backend server kaam kar raha hai! 🎉');
 });
 
+// Health-check endpoint
+app.get('/health', (req, res) => {
+  res.json({ ok: true, time: Date.now() });
+});
+
 // Start server
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server chal gaya hai http://0.0.0.0:${port} par`);
