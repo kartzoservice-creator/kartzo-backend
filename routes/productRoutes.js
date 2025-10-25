@@ -42,7 +42,17 @@ router.post('/seed', async (req, res) => {
       { name: 'Chicken', description: '1kg boneless chicken', price: 400 },
       { name: 'Potatoes', description: '1kg fresh potatoes', price: 30 },
       { name: 'Onions', description: '1kg fresh onions', price: 45 },
-      { name: 'Rice', description: '1kg Basmati rice', price: 120 }
+      { name: 'Rice', description: '1kg Basmati rice', price: 120 },
+      { name: 'Tomatoes', description: '1kg fresh tomatoes', price: 50 },
+      { name: 'Cucumbers', description: '500g fresh cucumbers', price: 20 },
+      { name: 'Yogurt', description: '500g plain yogurt', price: 70 },
+      { name: 'Coffee', description: '250g ground coffee', price: 200 },
+      { name: 'Tea', description: '100g black tea leaves', price: 100 },
+      { name: 'Sugar', description: '1kg white sugar', price: 40 },
+      { name: 'Salt', description: '1kg iodized salt', price: 20 },
+      { name: 'Flour', description: '1kg wheat flour', price: 60 },
+      { name: 'Oil', description: '1L refined sunflower oil', price: 150 },
+      { name: 'Soap', description: 'Bathing soap bar', price: 30 }
     ];
 
     await Product.insertMany(sampleProducts);
