@@ -19,6 +19,7 @@ const productSchema = new mongoose.Schema({
     default: Date.now
   }
 });
+productSchema.index({ createdAt: -1 });
 
 const Product = mongoose.model('Product', productSchema);
 

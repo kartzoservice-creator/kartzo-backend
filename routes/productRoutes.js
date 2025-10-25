@@ -5,10 +5,14 @@ const Product = require('../models/Product.model');
 // GET /api/products - Sabhi products database se fetch karna
 router.get('/', async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find({}, 'name price description createdAt')
+        .sort({ createdAt: -1 })
+        .limit(20)
+        .lean();
+    res.set('Cache-Control', 'public, max-age=30, stale-while-revalidate=120');
     res.json(products);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ error: 'Failed to fetch products' });
   }
 });
 
