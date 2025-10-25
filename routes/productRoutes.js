@@ -56,7 +56,7 @@ router.post('/seed', async (req, res) => {
     ];
 
     await Product.insertMany(sampleProducts);
-    res.status(201).json({ message: 'Database mein 11 sample products add ho gaye!' });
+    res.status(201).json({ message: 'Database mein naye sample products add ho gaye!' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
